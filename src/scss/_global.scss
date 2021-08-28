@@ -1,0 +1,16 @@
+body {
+  background: $bg;
+  background-repeat: no-repeat;
+  font-size: 9px;
+  line-height: 12px;
+  letter-spacing: 0.03em;
+  color: $text;
+  @extend %openSans-300;
+  overflow: hidden;
+}
+
+.container {
+  margin: 0 auto;
+  padding:  0 15px;
+  max-width: 375px;
+}

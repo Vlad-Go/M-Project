@@ -1,0 +1,35 @@
+$bg: linear-gradient(342.88deg, #A169A3 7.03%, rgba(130, 156, 172, 0.624369) 41.4%, rgba(125, 165, 173, 0.5625) 54.29%, rgba(186, 151, 187, 0) 98.68%);
+$accent: #8E60D9;
+$secondary: #829CAC;
+$default: #c4c4c4;
+$text: #fff;
+
+$defaultAnimSpeed: 300ms;
+
+
+%verticalCenter{
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+
+%roboto-900 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+%openSans-700 {
+  font-family: "OpenSans", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+%openSans-600 {
+  font-family: "OpenSans", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+%openSans-300 {
+  font-family: "OpenSans", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}

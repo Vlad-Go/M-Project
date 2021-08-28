@@ -1,0 +1,31 @@
+@import '../../node_modules/normalize.css/normalize.css';
+@import './reset';
+@import './fonts';
+@import './vars';
+@import './global';
+
+
+.app{
+  padding-top: 40px;
+  &__container{
+    display: flex;
+    flex-direction:column;
+    transition: all $defaultAnimSpeed ease-out;
+  }
+  &__inner{
+    height: 85vh;
+    display: flex;
+    flex-direction:column;
+  }
+}
+@import 'modules/_search-form/search-form';
+.music-cards{
+  padding: 0 12px;
+  margin-bottom: 20px;
+  flex: 1;
+  overflow-y: auto;
+}
+@import 'modules/_music-card/music-card';
+@import 'modules/_playlist-item/_playlist-item';
+@import 'modules/_player/player';
+@import 'modules/_playlists/playlists';

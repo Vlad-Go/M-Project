@@ -1,0 +1,17 @@
+.music-card--playlist{
+  padding: 12px;
+
+}
+.playlist{
+  &__button{
+  width: 25px;
+  height: 25px;
+  border: none;
+  background-color: transparent;
+  }
+  &__time {
+    color: rgba($text, 0.6);
+    margin-top: auto;
+    margin-right: 12px;
+  }
+}
