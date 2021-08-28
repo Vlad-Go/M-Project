@@ -1,0 +1,56 @@
+.playlist {
+  &__top  {
+   display: flex;
+   justify-content: space-between;
+   margin-bottom: 17px;
+  }
+  &__title  {
+    font-size: 24px;
+    line-height: 28px;
+    @extend %roboto-900;
+  }
+
+  &__arrow {
+    width: 24px;
+    height: 24px;
+    background-color: transparent;
+    border: none;
+    background-image: url('../images/icons/arrow.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    transition: all $defaultAnimSpeed;
+    &.active{
+      transform: rotate(180deg);
+    }
+  }
+  &__list {
+    display: flex;
+  }
+
+  &__item {
+    background: rgba(196, 196, 196, 0.53);
+    border-radius: 11px;
+    width: 160px;
+    height: 90px;
+    border: none;
+    display: flex;
+    align-items: flex-end;
+    & + .playlist__item{
+      margin-left: 25px;
+    }
+  }
+
+  &__item-caption {
+    margin: auto 8px 4px 8px;
+    font-size: 18px;
+    line-height: 25px;
+    @extend %openSans-700;
+  }
+
+  &__item--add {
+    background-image: url('../images/icons/add.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
