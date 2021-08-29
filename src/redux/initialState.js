@@ -1,6 +1,7 @@
-const initialState = (name) => {
+const initialState = (uid, email) => {
   return {
-    name: name,
+    uid,
+    email,
     playlists: []
   };
 };

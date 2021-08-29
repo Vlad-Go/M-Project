@@ -3,8 +3,6 @@ import {getDatabase, ref, onValue, set} from 'firebase/database';
 
 import initialState from '../redux/initialState';
 import Auth from './Auth';
-import {userId} from './utils';
-
 
 class Processor {
   constructor() {
@@ -25,10 +23,11 @@ class Processor {
     if (!localStorage.getItem(this.key)) {
       this.auth = new Auth();
       await this.auth.init();
-      this.userId = userId(this.auth.email);
-      this.write(initialState(this.userId));
+      this.userId = this.auth.uid;
+      this.write(initialState(this.userId, this.auth.email));
+    //  TODO signIn
     }
-    this.userId = this.read().name;
+    this.userId = this.read().uid;
   }
   write(state) {
     set(ref(this.database, `users/${this.userId}`), state);
