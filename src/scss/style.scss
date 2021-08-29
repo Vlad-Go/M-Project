@@ -5,12 +5,16 @@
 @import './global';
 
 
-.app{
-  padding-top: 40px;
+#app{
+  height: 100%;
+  margin: 0 auto;
+  padding:  40px 15px 0;
+  max-width: 375px;
+  display: flex;
+  flex-direction:column;
+  transition: all $defaultAnimSpeed ease-out;
   &__container{
-    display: flex;
-    flex-direction:column;
-    transition: all $defaultAnimSpeed ease-out;
+
   }
   &__inner{
     height: 85vh;
@@ -18,14 +22,22 @@
     flex-direction:column;
   }
 }
-@import 'modules/_search-form/search-form';
+@import 'modules/search-form';
 .music-cards{
   padding: 0 12px;
   margin-bottom: 20px;
   flex: 1;
   overflow-y: auto;
 }
-@import 'modules/_music-card/music-card';
-@import 'modules/_playlist-item/_playlist-item';
-@import 'modules/_player/player';
-@import 'modules/_playlists/playlists';
+@import 'modules/music-card';
+@import 'modules/playlist-item';
+@import 'modules/player';
+@import 'modules/playlists';
+@import 'modules/_auth';
+
+
+
+.plyr{
+  width: 1px;
+  height: 1px;
+}

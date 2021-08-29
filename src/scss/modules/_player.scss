@@ -1,4 +1,5 @@
 .player {
+  transform: translateY(60%);
   max-width: 320px;
   width: 100%;
   background: rgba($accent, 0.5);
@@ -57,7 +58,7 @@
 
   &__time {
     color: rgba($text, 0.6);
-   
+
   }
   &__button{
     width: 25px;
