@@ -1,0 +1,12 @@
+Cards {
+implementation,
+logic,
+}
+playlist{
+form
+}
+player{
+implementation
+}
+design
+optimization

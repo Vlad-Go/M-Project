@@ -1,1 +1,2 @@
-export const TEST = 'TEST';
+export const ADD_TO_PLAYLIST = 'ADD_TO_PLAYLIST';
+export const CREATE_PLAYLIST = 'CREATE_PLAYLIST';

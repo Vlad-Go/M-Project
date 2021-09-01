@@ -27,12 +27,13 @@
   }
   &__list {
     display: flex;
+    overflow-x: auto;
   }
 
   &__item {
     background: rgba(196, 196, 196, 0.53);
     border-radius: 11px;
-    width: 160px;
+    min-width: 160px;
     height: 90px;
     border: none;
     display: flex;
@@ -50,8 +51,41 @@
   }
 
   &__item--add {
-    background-image: url('../images/icons/add.svg');
-    background-repeat: no-repeat;
-    background-position: center;
+    background: rgba(196, 196, 196, 0.53) url('../images/icons/add.svg') no-repeat center;
+    margin-left: 25px;
+    border-radius: 11px;
+    min-width: 160px;
+    height: 90px;
+    border: none;
+    display: flex;
+    align-items: flex-end;
+  }
+  &__form{
+    position: absolute;
+    z-index: 100;
+    width: 350px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 50%;
+  }
+  &__input{
+    padding: 5px 10px;
+    margin: 0 auto;
+    font-size: 30px;
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid #909090;
+    outline: none;
+    box-shadow: -1px 6px 20px 0px rgba(0, 0, 0, 0.25);
+  }
+  &__input-button{
+    position: absolute;
+    right: 0;
+    top: 5px;
+    border: none;
+    border-radius: 3px;
+    bottom: 5px;
+    width: 40px;
+    background-color: rgba($default,.6);
   }
 }

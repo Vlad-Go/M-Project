@@ -31,6 +31,15 @@
         fill: $accent;
       }
     }
+    &:disabled{
+      opacity: .5;
+      &:hover{
+        background-color: $accent;
+        svg{
+          fill: $text;
+        }
+      }
+    }
   }
   margin-bottom: 35px;
 }

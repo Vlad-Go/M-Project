@@ -1,9 +1,9 @@
-<li class="music-card playlist-item">
-  <div class="music-card__content">
-    <img class="music-card__img" src="" alt="">
+export const getHTML = (state, itemData) => {
+  return `   <div class="music-card__content">
+    <img class="music-card__img" src="${itemData.img}" alt="">
     <div class="music-card__box">
-      <h4 class="music-card__caption">Caption</h4>
-      <p class="music-card__author">Author</p>
+      <h4 class="music-card__caption">${itemData.name}</h4>
+      <p class="music-card__author">${itemData.channel}</p>
     </div>
     <div class="playlist-item__time">2:31</div>
     <button class="playlist-item__button">
@@ -13,5 +13,5 @@
           fill="white" />
       </svg>
     </button>
-  </div>
-</li>
+  </div>`;
+};

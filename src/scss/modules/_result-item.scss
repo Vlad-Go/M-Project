@@ -1,40 +1,4 @@
-.music-card {
-  max-width: 320px;
-  background: rgba($secondary, 0.6);
-  border-radius: 6px;
-  padding: 12px 26px 12px 12px;
-  position: relative;
-  margin: 0 auto;
-  &__content {
-    display: flex;
-    align-items: center;
-  }
-
-  &__img {
-    width: 36px;
-    height: 36px;
-    background-color: $default;
-    object-fit: cover;
-    object-position: center;
-    margin-right: 12px;
-  }
-
-  &__box {
-    flex: 1;
-  }
-
-  &__caption {
-    font-size: 14px;
-    line-height: 19px;
-    @extend %openSans-600;
-    margin-bottom: 2px;
-  }
-  &__time {
-    color: rgba($text, 0.6);
-    margin-top: auto;
-    margin-right: 5px;
-  }
-
+.result-item{
   &__button {
     position: absolute;
     right: 0;
@@ -47,8 +11,10 @@
     border: none;
     padding: 4px;
   }
-  & + .music-card {
-    margin-top: 10px;
+  &__time {
+    color: rgba($text, 0.6);
+    margin-top: auto;
+    margin-right: 5px;
   }
 }
 .context-menu {

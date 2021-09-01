@@ -16,6 +16,7 @@ class Store {
       if (observer.event === action.type) observer.update(newState);
     });
     this.processor.write(newState);
+    console.log(newState);
   }
   observe(event, update) {
     this.observers.push({event, update});

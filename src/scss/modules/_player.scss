@@ -7,6 +7,7 @@
   border-radius: 24px;
   padding: 8px 20px;
   position: relative;
+  z-index: 20;
   margin: 0 auto 17px;
   &__passed {
     position: absolute;
@@ -65,5 +66,25 @@
     height: 25px;
     border: none;
     background-color: transparent;
+  }
+  .img-placeholder{
+    width: 36px;
+    height: 36px;
+    background-color: $default;
+    margin-right: 12px;
+    border-radius: 3px;
+  }
+  .caption-placeholder{
+    height: 11px;
+    width: 80px;
+    margin-bottom: 3px;
+    background-color: #a5a5a5;
+    border-radius: 3px;
+  }
+  .author-placeholder{
+    height: 9px;
+    border-radius: 3px;
+    width: 40px;
+    background-color: $default;
   }
 }
