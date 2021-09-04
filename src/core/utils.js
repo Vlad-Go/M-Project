@@ -10,20 +10,20 @@ export const findEl = (selector, where = document) => {
 
 export const popup = (modal, modalSelector) => {
   const overlay = '<div class="overlay"></div>';
-  if (typeof modal === 'string') {
-    document.body.insertAdjacentHTML('beforeend', overlay + modal);
-  } else {
-    document.body.insertAdjacentHTML('beforeend', overlay );
-    modal.classList.add('active');
-  }
+  document.body.insertAdjacentHTML('beforeend', overlay + modal);
+
   const close = () =>{
     document.onclick = null;
-    if (typeof modal === 'string') findEl(modalSelector).remove();
-    else modal.classList.remove('active');
+    findEl(modalSelector).remove();
     findEl('.overlay').remove();
   };
   document.onclick = (e) => {
     if (e.target.className === 'overlay') close();
   };
   return new Promise((resolve, reject) => resolve(close));
+};
+export const timeFormat = (s) =>{
+  const min = String(s/60).split('.')[0];
+  const sec = String((s%60).toFixed()).padStart(2, '0');
+  return `${min}:${sec}`;
 };

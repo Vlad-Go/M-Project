@@ -2,7 +2,7 @@ export const getHTML = (playlists) =>{
   playlists = playlists.map((playlist)=>{
     return ` 
     <li class="playlist__item">
-       <h4 contenteditable class="playlist__item-caption">${playlist.name}</h4>
+       <h4  class="playlist__item-caption">${playlist.name}</h4>
     </li>`;
   });
   return `

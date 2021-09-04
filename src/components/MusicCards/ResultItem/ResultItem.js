@@ -1,5 +1,5 @@
 import AppComponent from '../../../core/AppComponent';
-import {addToPlaylist} from '../../../redux/actions';
+import {addToPlaylist, createPlaylist} from '../../../redux/actions';
 import {ADD_TO_PLAYLIST, CREATE_PLAYLIST} from '../../../redux/types';
 import {findEl, popup} from '../../../core/utils';
 import {getHTML} from './getHTML';
@@ -29,19 +29,43 @@ class ResultItem extends AppComponent {
     this.$root.innerHTML = getHTML(state, this.data);
   }
   openContextMenu() {
-    const $contextMenu = findEl(`.context-menu-${this.data.id}`, this.$root);
-    return popup($contextMenu, `.context-menu-${this.data.id}`);
+    const availablePlaylists = this.getState.playlists.map((playlist)=>{
+      if (playlist.items.every((song)=> song.id !== this.data.id)) {
+        return `
+        <li class="context-menu-item"><button>${playlist.name}</button></li>`;
+      } else {
+        return '';
+      }
+    });
+    const getPosition = () => {
+      const cords = this.$root.getBoundingClientRect();
+      return `top:${cords.top+20}px; right:${cords.left+20}px`;
+    };
+
+    const resolve = popup(`
+      <ul class="active context-menu context-menu-${this.data.id}" style="${getPosition()}">
+             ${ availablePlaylists.join('')}
+      </ul>`, `.context-menu-${this.data.id}`);
+
+    const $contextMenu = findEl(`.context-menu-${this.data.id}`);
+
+    const addItem = (e) =>{
+      e.preventDefault();
+      const $target = e.target;
+      this.dispatch(addToPlaylist({
+        playlistName: $target.textContent,
+        item: {...this.data, playlist: $target.textContent}
+      }));
+      resolve.then((close)=> close());
+      $contextMenu.removeEventListener('click', addItem.bind(this));
+    };
+    $contextMenu.addEventListener('click', addItem.bind(this));
   }
   onClick(e) {
     const $target = e.target;
     if ($target.closest('.result-item__button')) {
-      this.closeContextMenu = this.openContextMenu();
+       this.openContextMenu();
     } else if ($target.closest('.context-menu-item')) {
-      this.dispatch(addToPlaylist({
-        playlistName: $target.textContent,
-        item: this.data
-      }));
-      this.closeContextMenu.then((close) => close());
     }
   }
 }

@@ -18,9 +18,10 @@ body {
   z-index: 50;
 }
 
+
 .music-card {
   max-width: 320px;
-  background: rgba($secondary, 0.6);
+  background: rgba(255, 255, 255, 0.45);
   border-radius: 6px;
   padding: 12px 26px 12px 12px;
   position: relative;
@@ -37,17 +38,19 @@ body {
     object-fit: cover;
     object-position: center;
     margin-right: 12px;
+    border-radius: 3px;
   }
 
   &__box {
     flex: 1;
+    color: $secondary;
   }
 
   &__caption {
-    font-size: 14px;
-    line-height: 19px;
+    font-size: 12px;
+    line-height: 15px;
+    margin-bottom: 5px;
     @extend %openSans-600;
-    margin-bottom: 2px;
   }
   & + .music-card {
     margin-top: 10px;

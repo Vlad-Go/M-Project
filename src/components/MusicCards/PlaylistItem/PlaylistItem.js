@@ -10,6 +10,8 @@ class PlaylistItem extends AppComponent {
       listeners: ['click']
     });
     this.data = data;
+    this.subscribe('playlistItem::chose', this.changeActive.bind(this));
+    this.subscribe('player::next', this.changeActive.bind(this));
   }
   get getHTML() {
     return `
@@ -23,12 +25,21 @@ class PlaylistItem extends AppComponent {
   update(state) {
     this.$root.innerHTML = getHTML(state, this.data);
   }
+  changeActive(update) {
+    if (update.id !== this.data.id) {
+      this.$root.classList.remove('current');
+    } else {
+      this.$root.classList.add('current');
+    }
+  }
 
   onClick(e) {
     const $target = e.target;
-    if ($target.closest('.playlist-item__button')) {
-      this.emmit('playlistItem::chose', this.data);
-    }
+    this.emmit('playlistItem::chose', this.data);
+
+    // if ($target.closest('.playlist-item__button')) {
+    //
+    // }
   }
 }
 
