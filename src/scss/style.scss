@@ -13,9 +13,6 @@
   display: flex;
   flex-direction:column;
   transition: all $defaultAnimSpeed ease-out;
-  &__container{
-
-  }
   &__inner{
     height: 85vh;
     display: flex;
@@ -28,8 +25,14 @@
   margin-bottom: 20px;
   flex: 1;
   overflow-y: auto;
+  .message{
+    text-align: center;
+    margin-top:50%;
+    font-size: 15px;
+    color: #909090;
+  }
 }
-@import 'modules/music-card';
+@import 'modules/result-item';
 @import 'modules/playlist-item';
 @import 'modules/player';
 @import 'modules/playlists';
@@ -40,4 +43,7 @@
 .plyr{
   width: 1px;
   height: 1px;
+  position: absolute;
+  overflow: hidden;
+  z-index: -1;
 }

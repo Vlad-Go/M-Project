@@ -8,3 +8,51 @@ body {
   @extend %openSans-300;
   overflow: hidden;
 }
+
+.overlay{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 50;
+}
+
+
+.music-card {
+  max-width: 320px;
+  background: rgba(255, 255, 255, 0.45);
+  border-radius: 6px;
+  padding: 12px 26px 12px 12px;
+  position: relative;
+  margin: 0 auto;
+  &__content {
+    display: flex;
+    align-items: center;
+  }
+
+  &__img {
+    width: 36px;
+    height: 36px;
+    background-color: $default;
+    object-fit: cover;
+    object-position: center;
+    margin-right: 12px;
+    border-radius: 3px;
+  }
+
+  &__box {
+    flex: 1;
+    color: $secondary;
+  }
+
+  &__caption {
+    font-size: 12px;
+    line-height: 15px;
+    margin-bottom: 5px;
+    @extend %openSans-600;
+  }
+  & + .music-card {
+    margin-top: 10px;
+  }
+}

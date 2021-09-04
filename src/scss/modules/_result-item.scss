@@ -1,0 +1,58 @@
+.result-item{
+  &__button {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background: $accent;
+    border-radius: 0px 6px 6px 0px;
+    margin: 0;
+    border: none;
+    padding: 4px;
+    transition: all $defaultAnimSpeed;
+    &:hover{
+      background: $secondary;
+    }
+  }
+  &__time {
+    color: rgba($text, 0.6);
+    margin-top: auto;
+    margin-right: 5px;
+  }
+}
+.context-menu {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.65);
+  box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.25);
+  border-radius: 6px;
+  z-index: 150;
+  right: 10px;
+  display: none;
+  &.active{
+    display: block;
+    width: 125px;
+  }
+
+}
+.context-menu-item {
+  font-size: 14px;
+  line-height: 15px;
+  padding: 5px 10px 0 10px;
+  transition: all $defaultAnimSpeed;
+  color: $secondary;
+  @extend %openSans-700;
+  &:last-child{
+    padding-bottom: 5px;
+  }
+  button{
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: inherit;
+    font-size: inherit;
+  }
+  &:hover{
+    background-color: #fff;
+    color: $accent;
+  }
+}

@@ -5,17 +5,23 @@
   background: rgba($accent, 0.5);
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.25);
   border-radius: 24px;
-  padding: 8px 20px;
+  padding: 8px 10px 8px 20px;
   position: relative;
+  z-index: 20;
   margin: 0 auto 17px;
+  overflow: hidden;
+  min-height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   &__passed {
     position: absolute;
     left: 0;
     top: 0;
     bottom: 0;
-    width: 120px;
     z-index: 10;
     background: $accent;
+    transition: all $defaultAnimSpeed;
     border-radius: 24px 0px 25px 24px;
   }
 
@@ -24,6 +30,7 @@
     z-index: 100;
     display: flex;
     align-items: center;
+    flex: 1;
   }
 
   &__img {
@@ -37,33 +44,50 @@
 
   &__box {
     flex: 1;
+    margin-right: 10px;
   }
-  &__time-box {
-    margin-right: 14px;
+  &__controller-box {
+    margin: 0 10px;
     display: flex;
-    flex-direction:column;
+    align-items: center;
     justify-content: space-between;
   }
 
   &__caption {
-    font-size: 14px;
-    line-height: 19px;
+    font-size: 12px;
+    line-height: 15px;
+    margin-bottom: 5px;
     @extend %openSans-600;
-    margin-bottom: 2px;
   }
-
-  &__current-time {
-    margin-bottom: 8px;
-  }
-
   &__time {
     color: rgba($text, 0.6);
 
   }
   &__button{
-    width: 25px;
-    height: 25px;
+    width: 28px;
+    height: 28px;
     border: none;
     background-color: transparent;
+    margin: 0 2px;
+  }
+  .img-placeholder{
+    width: 36px;
+    height: 36px;
+    background-color: $default;
+    margin-right: 12px;
+    border-radius: 3px;
+  }
+  .caption-placeholder{
+    height: 11px;
+    width: 80px;
+    margin-bottom: 3px;
+    background-color: #a5a5a5;
+    border-radius: 3px;
+  }
+  .author-placeholder{
+    height: 9px;
+    border-radius: 3px;
+    width: 40px;
+    background-color: $default;
   }
 }

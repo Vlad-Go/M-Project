@@ -1,8 +1,14 @@
-import {TEST} from './types';
+import {ADD_TO_PLAYLIST, CREATE_PLAYLIST} from './types';
 
-export const test = (data) => {
+export const addToPlaylist = (data) => {
   return {
-    type: TEST,
+    type: ADD_TO_PLAYLIST,
+    data
+  };
+};
+export const createPlaylist = (data) =>{
+  return {
+    type: CREATE_PLAYLIST,
     data
   };
 };
