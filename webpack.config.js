@@ -62,14 +62,22 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(),
-    // new CopyPlugin({
-    //   patterns: [
-    //     {
-    //       from: path.resolve(__dirname, 'src/favicon.ico'),
-    //       to: path.resolve(__dirname, 'dist/favicon.ico')
-    //     }
-    //   ]
-    // }),
+    new CopyPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, 'src/manifest.json'),
+          to: path.resolve(__dirname, 'dist/manifest.json')
+        },
+        {
+          from: path.resolve(__dirname, 'src/images/app-icons'),
+          to: path.resolve(__dirname, 'dist/images/app-icons')
+        },
+        {
+          from: path.resolve(__dirname, 'src/sw.js'),
+          to: path.resolve(__dirname, 'dist/sw.js')
+        }
+      ]
+    }),
     new HtmlWebpackPlugin({
       template: './index.html',
       // favicon: 'favicon.ico',
