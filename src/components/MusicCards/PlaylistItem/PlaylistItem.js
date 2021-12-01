@@ -36,10 +36,14 @@ class PlaylistItem extends AppComponent {
   onClick(e) {
     const $target = e.target;
     this.emmit('playlistItem::chose', this.data);
-
     // if ($target.closest('.playlist-item__button')) {
     //
     // }
+  }
+  destroy() {
+    super.destroy();
+    this.unsubscribe('playlistItem::chose', this.changeActive.bind(this));
+    this.unsubscribe('player::next', this.changeActive.bind(this));
   }
 }
 

@@ -40,10 +40,18 @@
 
 
 
-.plyr{
-  width: 1px;
-  height: 1px;
+
+iframe{
   position: absolute;
-  overflow: hidden;
-  z-index: -1;
+  top: 0;
+  width: 70px;
+  height: 70px;
+  z-index: 5;
+}
+.debug{
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 15px;
+  color: red;
 }

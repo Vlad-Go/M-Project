@@ -68,6 +68,9 @@ class ResultItem extends AppComponent {
     } else if ($target.closest('.context-menu-item')) {
     }
   }
+  destroy() {
+    super.destroy();
+  }
 }
 
 export default ResultItem;
